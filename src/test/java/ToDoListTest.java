@@ -23,4 +23,15 @@ public class ToDoListTest {
 
         assertEquals(output, toDoList.getTasks());
     }
+
+    @Test
+    void shouldReturnTagsAmount() {
+        ToDoList toDoList = new ToDoList();
+        toDoList.addTask("Programar", "Pessoal", "yellow");
+        toDoList.addTask("Fazer exercício físico", "Pessoal", "yellow");
+        toDoList.addTask("Fazer trabalho de LP5", "Faculdade", "green");
+        toDoList.addTask("Terminar tarefa", "Trabalho", "blue");
+
+        assertEquals(3, TagFactory.getTotalTags());
+    }
 }
